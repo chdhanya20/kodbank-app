@@ -15,7 +15,7 @@ export default function Login() {
     setError('');
     setLoading(true);
     try {
-      const res = await fetch(https://kodbank-app.onrender.com/api/auth/login), {
+      const res = await fetch(`https://kodbank-app.onrender.com/api/auth/login`), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'omit',
