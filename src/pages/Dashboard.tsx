@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 
-const API = '/api';
+const API = 'https://kodbank-app.onrender.com/api';
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ export default function Dashboard() {
     setBalance(null);
     setLoading(true);
     try {
-      const res = await fetch(`${API}/balance`, { credentials: 'include' });
+      const res = await fetch(`https://kodbank-app.onrender.com/api/balance`), { credentials: 'omit' });
       const data = await res.json();
       if (data.success) {
         setBalance(data.balance);
@@ -59,7 +59,7 @@ export default function Dashboard() {
   };
 
   const handleLogout = async () => {
-    await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' });
+    await fetch('/api/auth/logout', { method: 'POST', credentials: 'omit' });
     navigate('/login');
   };
 
