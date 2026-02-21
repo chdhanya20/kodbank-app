@@ -11,7 +11,8 @@ const PORT = process.env.PORT || 3001;
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://kodbank-banking-app.vercel.app'
+    'https://kodbank-banking-app.vercel.app',
+    'https://kodbank-banking-3ez6mfc95-ch-dhanyas-projects.vercel.app'
   ],
   credentials: true,
 }));
