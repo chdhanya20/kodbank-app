@@ -8,7 +8,7 @@ import balanceRoutes from './routes/balance.js';
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-import cors from "cors";
+
 
 app.use(cors({
   origin: [
