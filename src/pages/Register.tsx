@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
-const API = '/api/auth';
+const API = 'https://kodbank-app.onrender.com/api/auth';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -20,17 +20,18 @@ export default function Register() {
     setError('');
     setLoading(true);
     try {
-      const res = await fetch(`${API}/Register`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          uid: form.uid,
-          uname: form.uname,
-          password: form.password,
-          email: form.email,
-          phone: form.phone,
-        }),
-      });
+     const res = await fetch(`${API}/register`, {
+       method: 'POST',
+       headers: { 'Content-Type': 'application/json' },
+       credentials: 'include',
+       body: JSON.stringify({
+         uid: form.uid,
+         uname: form.uname,
+         password: form.password,
+         email: form.email,
+         phone: form.phone,
+       }),
+     });
       const data = await res.json();
       if (data.success) {
         navigate('/login');
