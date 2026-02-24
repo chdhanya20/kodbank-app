@@ -14,7 +14,7 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "https://kodbank-banking-app.vercel.app",
-    "https://kodbank-banking-7r46rudu5-ch-dhanyas-projects.vercel.app",
+    "https://kodbank-banking-oebo6d8hl-ch-dhanyas-projects.vercel.app",
   ],
   credentials: true,
 }));
